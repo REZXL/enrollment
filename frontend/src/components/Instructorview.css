@@ -1,0 +1,57 @@
+.instructor-view-container {
+    position: relative;
+}
+
+.add-button {
+    position: absolute;
+    bottom: 0;
+    right: -45%;
+    background-color: #40E0D0!important; /* Light Turquoise */
+    color: white;
+    border-radius: 50%; /* Make the button round */
+    text-transform: none;
+    font-size: 50px; /* Increase font size */
+    font-weight: bold; /* Make the font bold */
+    width: 60px; /* Set width to make it round */
+    height: 60px; /* Set height to make it round */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Ensure no padding affects the shape */
+}
+
+.add-button:hover {
+    background-color: #106b68; /* Slightly darker turquoise */
+    transform: scale(1.05);
+}
+
+
+.button1{
+    background-color: #40E0D0!important;
+    color: white;
+}
+
+.button2{
+    background-color: #d52337!important;
+    color: white;
+}
+
+.button1:hover{
+    background-color: #106b68;
+    transform: scale(1.05);
+}
+
+.button2:hover{
+    background-color: #81111e;
+    transform: scale(1.05);
+}
+
+.cards1{
+background-color: rgba(245, 243, 243, 0.918) ;
+}
+
+
+.cards1:hover{
+    /* background-color: rgba(175, 174, 174, 0.918) ; */
+    transform: translateY(-10px);
+}

@@ -1,0 +1,80 @@
+/* Home.css */
+
+body, html, #root {
+    height: 100%;
+    margin: 0;
+    background-color: #F0F8FF; /* Light Alice Blue background for contrast */
+}
+
+.homepage-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF; /* White background for the container */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+}
+
+.heading {
+    font-weight: bold;
+    color: #000000; /* Black color for the heading */
+    font-size: 3rem; /* Larger font size for better visibility */
+    margin-bottom: 20px; /* Spacing below the heading */
+    text-align: center; /* Align heading to the left */
+    
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content inside card */
+    padding: 20px;
+    border-radius: 2px; /* Rounded corners for the card */
+    background-color: #FFFFFF; /* White background for the card */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for card */
+    transition: box-shadow 0.3s ease-in-out;
+    max-width: 100%; /* Fixed width for better alignment */
+    
+    
+    
+}
+
+.login-card:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.login-card .MuiButton-root {
+    background-color: #40E0D0; /* Light Turquoise */
+    color: #FFFFFF; /* White text color */
+    margin-top: 10px; /* Spacing between buttons */
+    padding: 10px 20px; /* Padding inside buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    text-transform: none; /* Default case for button text */
+}
+
+.login-card .MuiButton-root:hover {
+    background-color: #32C8C2; /* Slightly darker turquoise */
+}
+
+.slick-slider {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slick-prev, .slick-next {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none; /* Remove default border */
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slick-prev:before, .slick-next:before {
+    color: white;
+    font-size: 20px;
+}

@@ -1,0 +1,15 @@
+.app-bar {
+    width: 100%!important;
+    max-width: 100%!important;
+    margin: 0 auto;
+    
+  }
+  .box {
+    width: 100%!important;
+  }
+ 
+
+.app-bar {
+    background-color: #40E0D0!important; /* Light Turquoise */
+  }
+  
