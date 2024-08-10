@@ -3,47 +3,46 @@
 body, html, #root {
     height: 100%;
     margin: 0;
-    background-color: #F0F8FF; /* Light Alice Blue background for contrast */
+    background-color: #ffffff; /* Light Turquoise background */
+    background-size: cover;
+    background-position: center;
 }
 
 .homepage-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF; /* White background for the container */
+    background-color: rgba(255, 255, 255, 0.9); /* White background with some opacity */
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+    width: 80%; /* Adjust width as needed */
+    max-width: 1200px; /* Max width for larger screens */
+    position: fixed; /* Fixed positioning to stay at top-right */
+    top: 20px; /* Adjust vertical position */
+    right: 20px; /* Adjust horizontal position */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end !important; /* Align items to the right */
+    justify-content: flex-start !important; /* Align items to the top */
 }
 
 .heading {
     font-weight: bold;
-    color: #000000; /* Black color for the heading */
+    color: #008080; /* Dark Turquoise color */
     font-size: 3rem; /* Larger font size for better visibility */
     margin-bottom: 20px; /* Spacing below the heading */
-    text-align: center; /* Align heading to the left */
-    
+    text-align: center; /* Center the heading text */
+    font-family: 'Arial', sans-serif; /* Updated font family */
 }
 
-.login-card {
+.button-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align content inside card */
-    padding: 20px;
-    border-radius: 2px; /* Rounded corners for the card */
-    background-color: #FFFFFF; /* White background for the card */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for card */
-    transition: box-shadow 0.3s ease-in-out;
-    max-width: 100%; /* Fixed width for better alignment */
-    
-    
-    
+    align-items: flex-end; /* Align buttons to the right */
+    margin-top: 20px; /* Space between heading and buttons */
 }
 
-.login-card:hover {
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-}
-
-.login-card .MuiButton-root {
+.button-container .MuiButton-root {
     background-color: #40E0D0; /* Light Turquoise */
     color: #FFFFFF; /* White text color */
     margin-top: 10px; /* Spacing between buttons */
@@ -52,7 +51,7 @@ body, html, #root {
     text-transform: none; /* Default case for button text */
 }
 
-.login-card .MuiButton-root:hover {
+.button-container .MuiButton-root:hover {
     background-color: #32C8C2; /* Slightly darker turquoise */
 }
 
@@ -61,10 +60,14 @@ body, html, #root {
     margin: 0 auto;
 }
 
+.slick-slide {
+    padding: 0 10px; /* Adjust padding for slider */
+}
+
 .slick-prev, .slick-next {
     z-index: 1;
-    width: 40px;
-    height: 40px;
+    width: 20px; /* Reduced size */
+    height: 40px; /* Reduced size */
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.5);
     border: none; /* Remove default border */
@@ -76,5 +79,5 @@ body, html, #root {
 
 .slick-prev:before, .slick-next:before {
     color: white;
-    font-size: 20px;
+    font-size: 16px; /* Adjust size of arrows */
 }

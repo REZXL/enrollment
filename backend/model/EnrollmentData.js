@@ -4,7 +4,7 @@ const enrollmentSchema=mongoose.Schema({
     courseDescription:String,
     courseCategory:String,
     courseImage:String
-})
+});
 
 const EnrollmentData=mongoose.model('detail',enrollmentSchema);
 module.exports=EnrollmentData;

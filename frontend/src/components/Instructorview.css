@@ -1,57 +1,73 @@
+/* Container for the instructor view */
 .instructor-view-container {
-    position: relative;
+    padding: 20px;
+    background-color: #F0F8FF; /* Light Alice Blue background for consistency */
+    min-height: 100vh;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
-.add-button {
-    position: absolute;
-    bottom: 0;
-    right: -45%;
-    background-color: #40E0D0!important; /* Light Turquoise */
-    color: white;
-    border-radius: 50%; /* Make the button round */
-    text-transform: none;
-    font-size: 50px; /* Increase font size */
-    font-weight: bold; /* Make the font bold */
-    width: 60px; /* Set width to make it round */
-    height: 60px; /* Set height to make it round */
+/* Ensure grid items do not overflow */
+.MuiGrid-item {
     display: flex;
-    align-items: center;
+    justify-content: center; /* Center align grid items */
+}
+
+/* Card styling */
+.cards1 {
+    background-color: #FFFFFF; /* White background for cards */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for card lift effect */
+    transition: box-shadow 0.3s ease-in-out;
+    max-width: 100%; /* Ensure cards do not overflow */
+    overflow: hidden; /* Hide overflow content */
+}
+
+/* Hover effect for cards */
+.cards1:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Button styling */
+.button1 {
+    background-color: #40E0D0; /* Turquoise Green */
+    color: #FFFFFF; /* White text */
+    margin: 5px;
+    &:hover {
+        background-color: #32C8C2; /* Slightly darker turquoise */
+    }
+}
+
+.button2 {
+    background-color: #FF6347 !important; /* Tomato Red */
+    color: #FFFFFF; /* White text */
+    margin: 5px;
+    &:hover {
+        background-color: #FF4500; /* Darker red on hover */
+    }
+}
+
+/* Add button styling */
+.add-button {
+    position: relative; /* Fixed position at the bottom right */
+    bottom: 20px;
+    right: -1100px;
+    background-color: #40E0D0; /* Light Turquoise */
+    color: #FFFFFF;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    display: flex;
     justify-content: center;
-    padding: 0; /* Ensure no padding affects the shape */
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    
 }
 
 .add-button:hover {
-    background-color: #106b68; /* Slightly darker turquoise */
-    transform: scale(1.05);
-}
-
-
-.button1{
-    background-color: #40E0D0!important;
-    color: white;
-}
-
-.button2{
-    background-color: #d52337!important;
-    color: white;
-}
-
-.button1:hover{
-    background-color: #106b68;
-    transform: scale(1.05);
-}
-
-.button2:hover{
-    background-color: #81111e;
-    transform: scale(1.05);
-}
-
-.cards1{
-background-color: rgba(245, 243, 243, 0.918) ;
-}
-
-
-.cards1:hover{
-    /* background-color: rgba(175, 174, 174, 0.918) ; */
-    transform: translateY(-10px);
+    background-color: #32C8C2; /* Slightly darker turquoise */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }

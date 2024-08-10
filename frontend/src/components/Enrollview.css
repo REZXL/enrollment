@@ -1,0 +1,35 @@
+.enroll-view-wrapper {
+    padding: 0 16px; /* Add some padding around the wrapper */
+    box-sizing: border-box;
+    min-height: 100vh; /* Ensure full height of the viewport */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .enroll-view-container {
+    flex: 1; /* Allow the container to grow and shrink as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 16px;
+    background-color: #f9f9f9; /* Background color to match your theme */
+  }
+  
+  .course-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the card takes full height */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .course-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Adjust the maximum height of the image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+  
+  input-group, .btn, .signup-prompt, .login-btn {
+    width: 100%;
+  }
+  

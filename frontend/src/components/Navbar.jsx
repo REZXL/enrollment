@@ -11,14 +11,14 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import Button from '@mui/material/Button';  // Import Button component
-import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const navigate = useNavigate();  // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -33,7 +33,28 @@ const Navbar = () => {
   };
 
   const handleHomeClick = () => {
-    navigate('/');  // Navigate to the home route
+    navigate('/');
+  };
+
+  const handleDashboardClick = () => {
+    const role = localStorage.getItem('role');
+    if (role === 'student') {
+      navigate('/studentview');
+    } else if (role === 'instructor') {
+      navigate('/instructorview');
+    }
+  };
+
+  const handleEnrolledCoursesClick = () => {
+    navigate('/enrolledcourses');
+  };
+
+  const handleLogout = () => {
+    // Clear authentication tokens or user data
+    localStorage.removeItem('userId');
+    localStorage.removeItem('role');
+    setAuth(false);
+    navigate('/loginpage'); // Redirect to login page
   };
 
   return (
@@ -50,7 +71,7 @@ const Navbar = () => {
           label={auth ? 'Logout' : 'Login'}
         />
       </FormGroup>
-      <AppBar position="static" className="app-bar">
+      <AppBar position="fixed" className="app-bar">
         <Toolbar>
           <IconButton
             size="large"
@@ -64,7 +85,7 @@ const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Enrollment App
           </Typography>
-          <Button color="inherit" onClick={handleHomeClick}>Home</Button>  {/* Add Home button */}
+          <Button color="inherit" onClick={handleHomeClick}>Home</Button>
           {auth && (
             <div>
               <IconButton
@@ -92,8 +113,11 @@ const Navbar = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleDashboardClick}>Dashboard</MenuItem>
+                {localStorage.getItem('role') === 'student' && (
+                  <MenuItem onClick={handleEnrolledCoursesClick}>Enrolled Courses</MenuItem>
+                )}
+                <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </Menu>
             </div>
           )}
@@ -101,6 +125,6 @@ const Navbar = () => {
       </AppBar>
     </Box>
   );
-}
+};
 
 export default Navbar;

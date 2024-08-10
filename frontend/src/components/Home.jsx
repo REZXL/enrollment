@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Card, CardContent, Typography, Button } from '@mui/material';
+import { Container, Typography, Button,Card,CardContent } from '@mui/material';
 import { Box } from '@mui/system';
 import Slider from 'react-slick';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import './Home.css'; // Import the CSS file
 
 const Home = () => {
   const [courses, setCourses] = useState([]);
+  const navigate = useNavigate(); // Hook for navigation
 
   useEffect(() => {
     axios.get('http://localhost:2999/details')
@@ -46,25 +48,28 @@ const Home = () => {
     ]
   };
 
+  const handleLoginClick = () => {
+    navigate('/loginpage'); // Navigate to the LoginPage
+  };
+
+  const handleSignUpClick = () => {
+    navigate('/signuppage'); // Navigate to the SignupPage
+  };
+
   return (
     <Container className="homepage-container">
-        <Typography variant="h4" component="div" className="heading">
-          Online Learning Platform
-        </Typography>
-        <Card className="login-card">
-          <CardContent>
-            <Typography variant="h5" component="div">
-              
-            </Typography>
-            <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-              Login as Student
-            </Button><br />
-            <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-              Login as Instructor
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Box>
+          <Box className="button-container">
+            <Button variant="contained" color="primary" onClick={handleLoginClick}>
+              Login
             </Button>
-          </CardContent>
-        </Card>
-      
+            <Button variant="contained" color="primary" onClick={handleSignUpClick}>
+              Sign Up
+            </Button>
+          </Box>
+        </Box>
+      </Box>
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="div" sx={{ mb: 2, textAlign: 'center' }} color={'black'}>
           Available Courses
